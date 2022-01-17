@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <span class="anchor" id="formCalculate"></span>
+    <!-- form card calculate -->
+    <div class="card card-outline-secondary">
+      <div class="card-header">
+        <h3 class="mb-0">Calculator</h3>
+      </div>
+      <div class="card-body">
+
+        <form autocomplete="off" class="form" id="formCalculate" name="formCalculate" role="form">
+          <div class="form-group row">
+            <div class="col-sm-3 pb-3">
+              <label for="width">Width</label>
+              <input class="form-control" id="width" name="width" required="" type="number" min="0.1"
+                value="<?= $data['width'] ?>">
+            </div>
+            <div class="col-sm-3 pb-3">
+              <label for="length">Length</label>
+              <input class="form-control" id="length" name="length" required="" type="number" min="0.1"
+                value="<?= $data['length'] ?>">
+            </div>
+
+            <div class="col-sm-6 pb-3">
+              <label for="measurementUnit">Measurement Unit</label>
+              <select class="form-control custom-select" id="measurementUnit">
+                <?php foreach($data['measurementUnits'] as $mUint){ ?>
+                <option value="<?= $mUint?>" <?php if ($mUint==$data['measurementUnit']) { ?> selected
+                  <?php }?> >
+                  <?= $mUint?>
+                </option>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6 pb-3">
+              <label for="depth">Depth</label>
+              <input class="form-control" id="depth" name="depth" required="" type="number" min="0.1"
+                value="<?= $data['length'] ?>">
+            </div>
+            <div class="col-sm-6 pb-3">
+              <label for="depthUnit">Depth Unit</label>
+              <select class="form-control custom-select" id="depthUnit">
+                <?php foreach($data['depthUnits'] as $dUint){ ?>
+                <option value="<?= $dUint?>" <?php if ($dUint==$data['depthUnit']) { ?> selected
+                  <?php }?> >
+                  <?= $dUint?>
+                </option>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
+          <hr class="mb-5">
+          <div class="row">
+            <div class="col-sm-4 pb-3">
+              <span>Total bags you need : </span>
+              <span id="total-bags">
+                <?=$data['totalBags']?>
+              </span>
+            </div>
+            <div class="col-sm-8 pb-3">
+              <button class="btn btn-success btn-lg float-right" id="calculate" type="button">Calculate</button>
+            </div>
+          </div>
+
+
+
+        </form>
+
+      </div>
+      <!--/card-block-->
+    </div><!-- /form card calculate -->
+  </div>
+</div>

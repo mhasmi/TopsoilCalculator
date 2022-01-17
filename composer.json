@@ -1,0 +1,14 @@
+{
+    "require": {
+        "php": ">=7.4",
+        "phpunit/phpunit": "8.5.2"
+
+    }
+    
+    ,"autoload": {
+        "psr-4": {
+            "BagsCalculator\\": "src/"
+        }
+    }
+    
+}

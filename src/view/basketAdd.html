@@ -1,0 +1,48 @@
+<div class="row justify-content-center d-none" id="add-to-basket">
+  <div class="col-md-10">
+    <span class="anchor" id="formCalculate"></span>
+    <hr class="mb-5">
+    <!-- form card calculate -->
+    <div class="card card-outline-secondary">
+      <div class="card-header">
+        <h3 class="mb-0">Basket</h3>
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-sm-2 pb-3">
+            <label for="bags">Bags</label>
+            <input class="form-control" id="bags" name="bags" required="" type="number" min="1" value="1">
+          </div>
+
+          <div class="col-sm-3 pb-3">
+            <label for="product">Product</label>
+            <select class="form-control custom-select" id="product">
+              <?php foreach($data['products'] as $product){ ?>
+              <option value="<?php echo $product['id'];?>" price="<?php echo $product['price'];?>">
+                <?php echo $product['name'];?>
+              </option>
+              <?php } ?>
+            </select>
+          </div>
+
+          <div class="col-sm-2 pb-3">
+            <label for="price">Price</label>
+            <input class="form-control" id="price" name="price" required="" type="number" min="" value="" readonly>
+          </div>
+
+          <div class="col-sm-2 pb-3">
+            <label for="total">Total</label>
+            <input class="form-control" id="total" name="total" required="" type="number" min="0.1" value="" readonly>
+          </div>
+          <div class="col-sm-2 pb-3">
+
+            <button class="btn btn-success btn-lg float-right" id="add" type="button">Add to Basket</button>
+          </div>
+
+        </div>
+      </div>
+      <!--/card-block-->
+    </div><!-- /form card calculate -->
+  </div>
+</div>
